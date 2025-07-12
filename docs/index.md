@@ -1,52 +1,78 @@
 ---
 layout: default
 title: Home
-nav_order: 1
-description: "Buidl - AI-powered dev bot that executes commands and builds things via Slack"
-permalink: /
+description: "AI-powered dev bot that executes commands and builds things via Slack using vector embeddings and OpenRouter integration"
 ---
 
-# Buidl Documentation
-{: .fs-9 }
+<div class="hero">
+    <h1>Buidl</h1>
+    <p class="subtitle">AI-powered dev bot that executes commands and builds things via Slack</p>
+    <div class="hero-buttons">
+        <a href="{{ '/guides/getting-started/' | relative_url }}" class="btn btn-primary">
+            🚀 Get Started
+        </a>
+        <a href="https://github.com/{{ site.repository }}/releases/latest" class="btn btn-secondary">
+            📦 Download v{{ site.version }}
+        </a>
+        <a href="{{ '/guides/websocket-setup/' | relative_url }}" class="btn btn-accent">
+            ⚡ WebSocket Setup
+        </a>
+    </div>
+</div>
 
-AI-powered dev bot that executes commands and builds things via Slack using vector embeddings and OpenRouter integration.
-{: .fs-6 .fw-300 }
+## ✨ Key Features
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View on GitHub](https://github.com/twilson63/buidl){: .btn .fs-5 .mb-4 .mb-md-0 }
+<div class="cards">
+    <div class="card">
+        <div class="card-icon primary">🚀</div>
+        <h3>WebSocket Support</h3>
+        <p>Real-time bidirectional communication with <strong>75-90% faster response times</strong> (50-200ms vs 500-2000ms HTTP).</p>
+        <a href="{{ '/guides/websocket-setup/' | relative_url }}" class="btn btn-primary">Setup WebSocket →</a>
+    </div>
 
----
+    <div class="card">
+        <div class="card-icon secondary">🧠</div>
+        <h3>AI-Powered Responses</h3>
+        <p>Uses OpenRouter (Claude 3.5 Sonnet) for intelligent, context-aware conversations with your development team.</p>
+        <a href="{{ '/guides/configuration/' | relative_url }}" class="btn btn-primary">Configure AI →</a>
+    </div>
 
-## Key Features
+    <div class="card">
+        <div class="card-icon accent">🔍</div>
+        <h3>Vector Embeddings</h3>
+        <p>Searches conversation history using semantic similarity for relevant context and intelligent responses.</p>
+        <a href="{{ '/api/vector-database/' | relative_url }}" class="btn btn-primary">Learn More →</a>
+    </div>
 
-### 🚀 WebSocket Support
-Real-time bidirectional communication with **75-90% faster response times** (50-200ms vs 500-2000ms HTTP).
+    <div class="card">
+        <div class="card-icon primary">🔐</div>
+        <h3>Privacy-First</h3>
+        <p>Configurable privacy levels with local embedding options for maximum data protection and compliance.</p>
+        <a href="{{ '/guides/privacy/' | relative_url }}" class="btn btn-primary">Privacy Guide →</a>
+    </div>
 
-### 🧠 AI-Powered Responses  
-Uses OpenRouter (Claude 3.5 Sonnet) for intelligent, context-aware conversations.
+    <div class="card">
+        <div class="card-icon secondary">⚡</div>
+        <h3>High Performance</h3>
+        <p>LSH indexing for sub-linear search performance and efficient message processing at scale.</p>
+        <a href="{{ '/guides/performance/' | relative_url }}" class="btn btn-primary">Performance →</a>
+    </div>
 
-### 🔍 Vector Embeddings
-Searches conversation history using semantic similarity for relevant context.
+    <div class="card">
+        <div class="card-icon accent">🔧</div>
+        <h3>Easy Deployment</h3>
+        <p>No public webhook URLs needed with Socket Mode - simplified networking and enhanced security.</p>
+        <a href="{{ '/guides/deployment/' | relative_url }}" class="btn btn-primary">Deploy →</a>
+    </div>
+</div>
 
-### 🔐 Privacy-First
-Configurable privacy levels with local embedding options for maximum data protection.
+## 🚀 Quick Start
 
-### ⚡ High Performance
-LSH indexing for sub-linear search performance and efficient message processing.
+### macOS (Pre-built Binary)
 
-### 🔧 Easy Deployment
-No public webhook URLs needed with Socket Mode - simplified networking and enhanced security.
-
----
-
-## Getting Started
-
-### Quick Installation
-
-#### macOS (Pre-built Binary)
 ```bash
 # Download and install
-curl -L https://github.com/twilson63/buidl/releases/latest/download/buidl-v1.1.0-macos-arm64.tar.gz -o buidl.tar.gz
+curl -L https://github.com/{{ site.repository }}/releases/latest/download/buidl-v{{ site.version }}-macos-arm64.tar.gz -o buidl.tar.gz
 tar -xzf buidl.tar.gz
 cd macos-arm64
 ./install.sh
@@ -58,10 +84,11 @@ buidl-config
 buidl
 ```
 
-#### Any Platform (Source)
+### Any Platform (Source)
+
 ```bash
 # Download source
-curl -L https://github.com/twilson63/buidl/releases/latest/download/buidl-v1.1.0-source.tar.gz -o buidl-source.tar.gz
+curl -L https://github.com/{{ site.repository }}/releases/latest/download/buidl-v{{ site.version }}-source.tar.gz -o buidl-source.tar.gz
 tar -xzf buidl-source.tar.gz
 cd source
 
@@ -73,31 +100,38 @@ cd source
 ./buidl-socket
 ```
 
-### Next Steps
+<div class="alert alert-info">
+    <strong>💡 Pro Tip:</strong> Use WebSocket Socket Mode for the best performance! It's 75-90% faster than HTTP Events API.
+</div>
 
-1. **[Configuration Guide](guides/configuration/)** - Set up your Slack app and API keys
-2. **[WebSocket Setup](guides/websocket-setup/)** - Enable Socket Mode for real-time performance  
-3. **[Deployment Guide](guides/deployment/)** - Deploy to production environments
-4. **[API Reference](api/)** - Explore the full API documentation
+## 📊 Performance Comparison
 
----
+<div class="table-wrapper">
 
-## Architecture Overview
+| Feature | HTTP Events API | Socket Mode | Improvement |
+|---------|----------------|-------------|-------------|
+| **Latency** | 500-2000ms | 50-200ms | **75-90% faster** |
+| **Connection** | Stateless HTTP | Persistent WebSocket | **Real-time** |
+| **Deployment** | Complex (webhooks) | Simple (outbound only) | **Simplified** |
+| **Security** | Public endpoints | Outbound connections | **Enhanced** |
+| **Development** | ngrok required | Local testing friendly | **Easier** |
 
-```mermaid
-graph TB
-    A[Slack] -->|WebSocket| B[Buidl Bot]
-    B --> C[Vector Database]
-    B --> D[AI Processing]
-    B --> E[OpenRouter API]
-    
-    C --> F[Local Embeddings]
-    C --> G[Message History]
-    
-    D --> H[Context Builder]
-    D --> I[Response Generator]
-    
-    E --> J[Claude 3.5 Sonnet]
+</div>
+
+## 🏗️ Architecture Overview
+
+```
+┌─────────────────┐    WebSocket    ┌──────────────────┐
+│   Slack API     │◄─── Secure ────►│  Buidl Bot       │
+│  Socket Mode    │     Connection  │  (Local/Private) │
+└─────────────────┘                 └──────────────────┘
+                                            │
+                                            ▼
+                                    ┌──────────────────┐
+                                    │  Vector Database │
+                                    │  AI Processing   │
+                                    │  Local Storage   │
+                                    └──────────────────┘
 ```
 
 ### Components
@@ -107,28 +141,50 @@ graph TB
 - **AI Processing** - Context-aware response generation
 - **OpenRouter** - Claude 3.5 Sonnet integration for intelligent responses
 
+## 📖 Documentation
+
+<div class="cards">
+    <div class="card">
+        <div class="card-icon primary">📚</div>
+        <h3>Getting Started</h3>
+        <p>Complete installation guide with step-by-step instructions for all platforms.</p>
+        <a href="{{ '/guides/getting-started/' | relative_url }}" class="btn btn-primary">Start Here →</a>
+    </div>
+
+    <div class="card">
+        <div class="card-icon secondary">⚡</div>
+        <h3>WebSocket Setup</h3>
+        <p>Enable Socket Mode for real-time performance and simplified deployment.</p>
+        <a href="{{ '/guides/websocket-setup/' | relative_url }}" class="btn btn-primary">Setup Guide →</a>
+    </div>
+
+    <div class="card">
+        <div class="card-icon accent">⚙️</div>
+        <h3>Configuration</h3>
+        <p>Complete reference for all configuration options and environment variables.</p>
+        <a href="{{ '/guides/configuration/' | relative_url }}" class="btn btn-primary">Configure →</a>
+    </div>
+
+    <div class="card">
+        <div class="card-icon primary">🔌</div>
+        <h3>API Reference</h3>
+        <p>Detailed API documentation with examples for extending and integrating.</p>
+        <a href="{{ '/api/overview/' | relative_url }}" class="btn btn-primary">API Docs →</a>
+    </div>
+</div>
+
+## 🌟 Community & Support
+
+- **GitHub Repository**: [{{ site.repository }}](https://github.com/{{ site.repository }})
+- **Issues & Bug Reports**: [Report Issues](https://github.com/{{ site.repository }}/issues)
+- **Feature Requests**: [GitHub Discussions](https://github.com/{{ site.repository }}/discussions)
+- **Latest Releases**: [Download Page](https://github.com/{{ site.repository }}/releases)
+
 ---
 
-## Performance Comparison
-
-| Feature | HTTP Events API | Socket Mode |
-|---------|----------------|-------------|
-| **Latency** | 500-2000ms | 50-200ms |
-| **Connection** | Stateless HTTP | Persistent WebSocket |
-| **Deployment** | Complex (webhooks) | Simple (outbound only) |
-| **Security** | Public endpoints | Outbound connections |
-| **Development** | ngrok required | Local testing friendly |
-
----
-
-## Community & Support
-
-- **GitHub Issues**: [Report bugs and request features](https://github.com/twilson63/buidl/issues)
-- **Discussions**: [Join the community discussion](https://github.com/twilson63/buidl/discussions)
-- **Releases**: [Latest releases and changelogs](https://github.com/twilson63/buidl/releases)
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/twilson63/buidl/blob/main/LICENSE) file for details.
+<div class="text-center">
+    <p style="font-size: 1.25rem; color: var(--text-secondary);">
+        Ready to supercharge your Slack workspace with AI? 
+        <a href="{{ '/guides/getting-started/' | relative_url }}" style="color: var(--primary-color); font-weight: 600;">Get started now →</a>
+    </p>
+</div>
