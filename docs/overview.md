@@ -1,8 +1,8 @@
 ---
-layout: api
+layout: default
 title: API Overview
-nav_order: 1
 description: Overview of Buidl's internal APIs and extension points
+permalink: /api/overview/
 ---
 
 # API Overview

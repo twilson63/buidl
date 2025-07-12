@@ -1,8 +1,8 @@
 ---
-layout: guide
+layout: default
 title: WebSocket Setup
-nav_order: 2
 description: Enable Socket Mode for real-time WebSocket communication
+permalink: /guides/websocket-setup/
 ---
 
 # WebSocket Setup Guide

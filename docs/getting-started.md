@@ -1,8 +1,8 @@
 ---
-layout: guide
+layout: default
 title: Getting Started
-nav_order: 1
 description: Quick start guide for setting up and running Buidl
+permalink: /guides/getting-started/
 ---
 
 # Getting Started with Buidl
