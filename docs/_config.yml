@@ -1,0 +1,62 @@
+# Site settings
+title: Buidl Documentation
+description: AI-powered dev bot that executes commands and builds things via Slack
+baseurl: "/buidl"
+url: "https://twilson63.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Navigation
+nav_order: 1
+
+# Collections
+collections:
+  guides:
+    output: true
+    permalink: /:collection/:name/
+  api:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "guides"
+    values:
+      layout: "guide"
+  - scope:
+      path: ""
+      type: "api"
+    values:
+      layout: "api"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO
+author: Tom Wilson
+twitter:
+  username: twilson63
+  card: summary
+
+# GitHub
+github:
+  repository_url: https://github.com/twilson63/buidl
+  download_url: https://github.com/twilson63/buidl/releases/latest
+
+# Custom variables
+version: "1.1.0"
+slack_api_url: "https://api.slack.com"
+openrouter_url: "https://openrouter.ai"
