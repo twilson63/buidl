@@ -1,7 +1,7 @@
 -- simple_buidl.lua
 -- Simple version of Buidl for testing build system
 
-print("=== BUIDL v1.0.0 ===")
+print("=== BUIDL v1.1.0 ===")
 print("AI-powered dev bot")
 print("")
 print("Usage:")
