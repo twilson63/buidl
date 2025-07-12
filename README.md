@@ -316,15 +316,13 @@ ssh user@server "cd /opt/slack-bot && ./slack_bot_server"
 
 ## 📚 Documentation
 
-### Architecture Details
-- [Vector Database Design](docs/vector-database.md)
-- [Privacy Implementation](docs/privacy.md)
-- [Performance Tuning](docs/performance.md)
+**📖 [Complete Documentation](https://twilson63.github.io/buidl/)** - Visit our comprehensive docs site
 
-### Integration Guides
-- [Slack App Configuration](docs/slack-setup.md)
-- [OpenRouter Integration](docs/openrouter.md)
-- [Enterprise Deployment](docs/enterprise.md)
+### Quick Links
+- [Getting Started Guide](https://twilson63.github.io/buidl/guides/getting-started/) - Installation and setup
+- [WebSocket Setup](https://twilson63.github.io/buidl/guides/websocket-setup/) - Enable Socket Mode
+- [Configuration Reference](https://twilson63.github.io/buidl/guides/configuration/) - All configuration options
+- [API Documentation](https://twilson63.github.io/buidl/api/overview/) - API reference and examples
 
 ## 🤝 Contributing
 
